@@ -12,3 +12,10 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// First prompt with instructions
+function generatePassword() {
+  alert ("Answer the following questions in order to generate your random password.");
+
+
+}
