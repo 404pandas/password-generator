@@ -7,7 +7,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
@@ -46,21 +45,24 @@ function generatePassword() {
   if (lowerCase == true) {
     lowerCase = "abcdefghijklmnopqrstuvwxyz"}
     else {
-      lowerCase = " "}
+      lowerCase = ""}
       if (upperCase == true) {
         upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
       }
     else {
-      lowerCase = " "}
-      if (numeric == true) {
-        numeric = "1234567890"
-      }
-      else {numeric = " "}
-      if (special == true) {
-        special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~"
-      }
-      else {
-        special = " "
-      }
-    }
+      lowerCase = ""}
+      if (numeric == true) {numeric = "1234567890"}
+      else {numeric = ""}
+      if (special == true) {special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~"}
+      else {special = ""}
 
+    //Merges options into string
+    var grandString = special.concat(lowerCase, upperCase, numeric);
+
+// Math for randomization
+var randomNumber = "";
+for (var i = 0; i <passwordLength, i++) {
+  randomNumber += grandString [Math.floor(Math.random() * grandString.length)];
+}
+return randomNumber;
+}
