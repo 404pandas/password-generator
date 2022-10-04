@@ -69,7 +69,8 @@ function generatePassword() {
   function copyText() {
     var ElementID = document.getElementById("password");
     ElementID.select();
-    navigator.clipboard.writeText(ElementID.value);
+    navigator.clipboard.writeText(ElementID.value); {
     alert("Password copied to clipboard: " + randomNumber)
+    }
   }
 }
