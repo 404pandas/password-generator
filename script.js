@@ -22,6 +22,8 @@ function generatePassword() {
     var passwordLength = Number(prompt("How many characters would you like your password to be?\nMust be between 8 and 128 characters"));
     if (passwordLength >= 8 && passwordLength <= 128) {
       inValid = false;
+    } else if (passwordLength == 0) {
+        Window.close()
     } else {
       alert ("Invalid input. Please recheck character parameters and try again.");
     }
@@ -35,7 +37,7 @@ function generatePassword() {
     var numeric = confirm("Would you like to include numbers?\nSelect cancel to skip character type.");
     var special = confirm("Would you like to include special characters?\nSelect cancel to skip character type.");
     alert("You chose: \n Lowercase Letters: " + lowerCase + "\n Uppercase Letters: " + upperCase + "\n Numbers: " + numeric + "\n Special Characters: " + special);
-      if (lowerCase == true || upperCase == true || numeric == true || special == true) {
+    if (lowerCase == true || upperCase == true || numeric == true || special == true) {
       inValid = true;
     } else {
       alert("Invalid selection. At least one option must be selected. Please recheck parameters and try again");
