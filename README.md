@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a password generator. The purposes of this project is to practice JavaScript and create a password generator.
+This project is a password generator. The purposes of this project is to practice JavaScript and create a password generator. Follow the prompts to produce a password.
 
 ## User Story
 
@@ -48,8 +48,8 @@ Collaborators on this project included instructional staff, TAs, and students fr
 
 
 ## Links
-* [insert live link here]
-* [https://github.com/404pandas/working-portfolio]
+* Deployed site: [Live site-404pandas](Insert live link here)
+* Github repo: [Github-404pandas](https://github.com/404pandas/working-portfolio)
 
 ## Screenshots
 ![Screenshot of live image](insert link to screenshot here)
