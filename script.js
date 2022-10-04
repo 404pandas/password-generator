@@ -67,12 +67,10 @@ function generatePassword() {
 
   // Copy Password javascript
   function copyText() {
-    document.getElementById("copy")
     var copyText = document.getElementById("password");
     copyText.select();
     copyText.setSelectionRange(0, 99999); // For mobile devices
-    navigator.clipboard.writeText(text.value);
-      then(() => {alert("Copied password to clipboard");
-      })
-  };
+    navigator.clipboard.writeText(copyText.value);
+      alert("Copied password to clipboard: " + copyText.value);
+  }
 }
