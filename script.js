@@ -17,7 +17,7 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
   alert ("Answer the following questions in order to generate your random password.");
 
-    // User input for password length and validation for a number between specified values
+    // Password length parameters and prompt
     var inValid = true;
     while (inValid) {
       var passwordLength = Number(prompt('How many characters would you like your password to be?\nMust be between 8 and 128 characters'));
@@ -27,5 +27,18 @@ function generatePassword() {
         alert ('Invalid input. Please recheck character parameters and try again.');
       }
     }
-    alert('Your password length:\n' + passwordLength + ' characters.\n\nFollow the prompts to choose if your password will contain numbers, special, uppercase, and lowercase characters.\nPlease choose at least 1 option.');
+    alert('Your password length:\n' + passwordLength + ' characters.\n\nFollow the prompts to choose if your password will contain numbers, uppercase, lowercase, and/or special characters.\nPlease choose at least one option.');
+  
+    //Character type and prompt
+    while (!inValid) {
+      var lowerCase = confirm("Would you like to include lowercase letters?\nSelect cancel to skip character type.")
+      var upperCase = confirm("Would you like to include uppercase letters?\nSelect cancel to skip character type.")
+      var numeric = confirm("Would you like to include numbers?\nSelect cancel to skip character type.")
+      var special = confirm("Would you like to include special characters?\nSelect cancel to skip character type.")    }
+      alert('You chose: \n Lowercase Letters: ' + lowerCase + '\n Uppercase Letters: ' + upperCase + '\n Numbers: ' + numeric + '\n Special Characters: ' + special);
+  if (lowerCase == true || upperCase == true || numeric == true || special == true) {
+    inValid = true;
+  } else {
+    alert('Invalid selection. At least one option must be selected. Please recheck parameters and try again');
   }
+}
