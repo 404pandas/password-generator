@@ -48,7 +48,7 @@ Collaborators on this project included instructional staff, TAs, and students fr
 
 
 ## Links
-* Deployed site: [Live site-404pandas](Insert live link here)
+* Deployed site: [Live site-404pandas](https://404pandas.github.io/password-generator/)
 * Github repo: [Github-404pandas](https://github.com/404pandas/working-portfolio)
 
 ## Screenshots
