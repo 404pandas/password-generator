@@ -36,7 +36,7 @@ function generatePassword() {
     var upperCase = confirm("Would you like to include uppercase letters?\nSelect cancel to skip character type.");
     var numeric = confirm("Would you like to include numbers?\nSelect cancel to skip character type.");
     var special = confirm("Would you like to include special characters?\nSelect cancel to skip character type.");
-    alert("You chose: \n Lowercase Letters: " + lowerCase + "\n Uppercase Letters: " + upperCase + "\n Numbers: " + numeric + "\n Special Characters: " + special);
+    alert("You chose: \n Lowercase Letters: " + lowerCase + "\n Uppercase Letters: " + upperCase + "\n Numbers: " + numeric + "\n Special Characters: " + special + "\n Your password length: " + passwordLength + " characters.");
     if (lowerCase == true || upperCase == true || numeric == true || special == true) {
       inValid = true;
     } else {
@@ -64,4 +64,15 @@ function generatePassword() {
     randomNumber += grandString [Math.floor(Math.random() * grandString.length)];
   }
   return randomNumber;
+
+  // Copy Password javascript
+  function copyText() {
+    document.getElementById("copy")
+    var copyText = document.getElementById("password");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+    navigator.clipboard.writeText(text.value);
+      then(() => {alert("Copied password to clipboard");
+      })
+  };
 }
