@@ -64,11 +64,10 @@ function generatePassword() {
     randomNumber += grandString [Math.floor(Math.random() * grandString.length)];
   }
   return randomNumber;
-
-  // Copy Password javascript
-  function copyText() {
-    var ElementID = document.getElementById("password");
-    ElementID.select();
-    navigator.clipboard.writeText(ElementID.value);
-  }
+}
+// Copy Password javascript
+function copyText() {
+  var ElementID = document.getElementById("password");
+  ElementID.select();
+  navigator.clipboard.writeText(ElementID.value);
 }
