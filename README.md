@@ -45,14 +45,14 @@ Collaborators on this project included instructional staff, TAs, and students fr
 * [https://www.markdownguide.org/basic-syntax]
 * [https://www.w3schools.com/cssref]
 * [https://dev.to/code_mystery/random-password-generator-using-javascript-6a]
-
+* [https://www.w3schools.com/howto/howto_js_copy_clipboard.asp]
 
 ## Links
 * Deployed site: [Live site-404pandas](https://404pandas.github.io/password-generator/)
 * Github repo: [Github-404pandas](https://github.com/404pandas/working-portfolio)
 
 ## Screenshots
-![Screenshot of live image](insert link to screenshot here)
+![Screenshot of live image](https://raw.githubusercontent.com/404pandas/password-generator/main/assets/screenshot.jpg)
 
 ## License
 
