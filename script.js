@@ -23,7 +23,7 @@ function generatePassword() {
     if (passwordLength >= 8 && passwordLength <= 128) {
       inValid = false;
     } else if (passwordLength == 0) {
-        Window.close()
+        window.close()
     } else {
       alert ("Invalid input. Please recheck character parameters and try again.");
     }
@@ -64,10 +64,11 @@ function generatePassword() {
     randomNumber += grandString [Math.floor(Math.random() * grandString.length)];
   }
   return randomNumber;
-}
+
   // Copy Password javascript
   function copyText() {
     var copyText = document.getElementById("password");
     copyText.select();
     navigator.clipboard.writeText(copyText.value);
   }
+}
