@@ -41,4 +41,26 @@ function generatePassword() {
   } else {
     alert('Invalid selection. At least one option must be selected. Please recheck parameters and try again');
   }
-}
+
+  // Password character options
+  if (lowerCase == true) {
+    lowerCase = "abcdefghijklmnopqrstuvwxyz"}
+    else {
+      lowerCase = " "}
+      if (upperCase == true) {
+        upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      }
+    else {
+      lowerCase = " "}
+      if (numeric == true) {
+        numeric = "1234567890"
+      }
+      else {numeric = " "}
+      if (special == true) {
+        special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~"
+      }
+      else {
+        special = " "
+      }
+    }
+
