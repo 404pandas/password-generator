@@ -1,38 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator</title>
-    <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
     <div class="wrapper">
       <header>
         <h1>Password Generator</h1>
+        <p class="subtitle">Cryptographically secure &bull; Instant &bull; No data stored</p>
       </header>
+
       <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
+        <!-- Password Display -->
+        <div class="password-row">
+          <p id="password" class="password-text" aria-label="Generated password" aria-live="polite">
+            Click generate to get started
+          </p>
+          <button id="copy-btn" class="icon-btn" aria-label="Copy password to clipboard" title="Copy" disabled>
+            <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </button>
         </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password">
-          </textarea>
+
+        <!-- Strength Meter -->
+        <div class="strength-row">
+          <div
+            class="strength-bars"
+            role="meter"
+            aria-valuemin="0"
+            aria-valuemax="4"
+            aria-valuenow="0"
+            aria-label="Password strength"
+          >
+            <div class="bar" id="bar-1"></div>
+            <div class="bar" id="bar-2"></div>
+            <div class="bar" id="bar-3"></div>
+            <div class="bar" id="bar-4"></div>
+          </div>
+          <span id="strength-label" class="strength-label" aria-live="polite">—</span>
         </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
-          <button id="copy" class="btn" onclick="copyText()">Copy Password</button>
-          <p>This generator utilizes the following special characters:</p>
-          <p>! # $ % & ' ( ) * + , - . / : ; < = > ? @ [ ] ^ _ ` { | } ~</p>
+
+        <div class="divider"></div>
+
+        <!-- Length Slider -->
+        <div class="option-group">
+          <div class="option-label-row">
+            <label for="length-slider">Length</label>
+            <span id="length-display" class="length-badge">16</span>
+          </div>
+          <input
+            type="range"
+            id="length-slider"
+            class="slider"
+            min="8"
+            max="128"
+            value="16"
+            aria-label="Password length"
+          />
+          <div class="slider-limits">
+            <span>8</span>
+            <span>128</span>
+          </div>
         </div>
+
+        <!-- Character Type Toggles -->
+        <div class="options-grid">
+          <label class="toggle-label">
+            <input type="checkbox" id="include-uppercase" checked />
+            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+            <span class="toggle-text">Uppercase <em>A–Z</em></span>
+          </label>
+          <label class="toggle-label">
+            <input type="checkbox" id="include-lowercase" checked />
+            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+            <span class="toggle-text">Lowercase <em>a–z</em></span>
+          </label>
+          <label class="toggle-label">
+            <input type="checkbox" id="include-numbers" checked />
+            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+            <span class="toggle-text">Numbers <em>0–9</em></span>
+          </label>
+          <label class="toggle-label">
+            <input type="checkbox" id="include-special" />
+            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+            <span class="toggle-text">Symbols <em>!@#$…</em></span>
+          </label>
+        </div>
+
+        <!-- Generate Button -->
+        <button id="generate-btn" class="btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
+          </svg>
+          Generate Password
+        </button>
+
+        <p class="security-note">
+          Uses <code>crypto.getRandomValues()</code> — no <code>Math.random()</code>, no network requests
+        </p>
       </div>
     </div>
-    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
